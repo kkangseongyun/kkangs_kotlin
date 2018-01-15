@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Title</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Spring MVC + JPA with Kotlin</h1>
+        <p>깡샘의 코틀린 프로그래밍 - TODO Sample</p>
+    </div>
+</div>
+
+
+<table class="table table-striped" th:if="${todos.size() > 0}">
+    <tbody>
+    <tr th:each="todo : ${todos}">
+        <td scope="col-2" th:text="${todo.todoId}"></td>
+        <td scope="col-9" th:text="${todo.content}"></td>
+        <td scope="col-2"><a th:href="@{/delete(todoId=${todo.todoId})}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<form th:action="@{/}" method="post">
+    <legend>Add TODO</legend>
+    <div class="row">
+        <div class="form-group col-10">
+            <input type="text" class="form-control" name="content" id="lastName"></input>
+        </div>
+        <div col="col-2">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>
