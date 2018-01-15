@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+</head>
+<body>
+<h1>Hello Spring MVC with Kotlin</h1>
+
+<h3 th:text="${params}"></h3>
+<table th:object="${myModel}">
+    <tr>
+        <th>data1</th>
+        <th>data2</th>
+    </tr>
+    <tr>
+        <td th:text="*{data1}"></td>
+        <td th:text="*{data2}"></td>
+    </tr>
+</table>
+</body>
+</html>
