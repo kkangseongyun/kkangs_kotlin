@@ -1,0 +1,8 @@
+rootProject.name = 'KotlinLab-JS'
+include 'Ch26'
+include 'Ch25'
+include 'Ch26-Step1'
+include 'Ch26_Step'
+include 'Ch26_Step_Node'
+include 'Ch26_Step_Node'
+
