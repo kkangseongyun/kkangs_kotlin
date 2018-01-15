@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var jsData=10
+        function jsFun(arg){
+            var sum=0
+            for(i=1; i<=arg; i++){
+                sum += i
+            }
+            console.log('sum:'+sum)
+        }
+
+        var JsClass = (function() {
+            var msg
+	        function JsClass(msg) {
+		        this.msg = msg;
+	        }
+	        JsClass.prototype.sayHello = function() {
+		        console.log("hello, " + this.msg)
+	        }
+	        JsClass.sayHello2=function(arg){
+	            console.log('hello2' + arg)
+	        }
+	        return JsClass;
+        })();
+
+        function jsFun2(arg1, arg2=10, arg3="hello"){
+            console.log(arg1+':'+arg2+':'+arg3);
+        }
+
+        var JsSuper = (function() {
+            function JsSuper() { }
+	        JsSuper.prototype.superFun = function() {
+		        console.log("i am js superFun")
+	        }
+	        return JsSuper;
+        })();
+
+        function jsFun3(argObj) {
+            argObj.argFun1()
+            argObj.argFun2()
+        }
+
+    </script>
+</head>
+<body>
+
+
+
+<h2>Test 3_1 type</h2>
+<div id="result_3_1_dynamic_1"></div>
+<div id="result_3_1_dynamic_2"></div>
+
+<h2>Test 3_3 external</h2>
+<div id="3_3"><div>hello</div><div>world</div></div>
+
+<script type="text/javascript" src="../out/production/classes/lib/kotlin.js"></script>
+<script type="text/javascript" src="../out/production/classes/Ch25_main.js"></script>
+
+<script src="testCh25.js"></script>
+</body>
+</html>
